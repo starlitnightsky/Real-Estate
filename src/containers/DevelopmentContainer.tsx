@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { ImageUpload, CustomInput } from '../components'
+import { ImageUpload, CustomInput, AbilityItem } from '../components'
 
 export function DevelopmentContainer() {
+  const [abilityCount, setAbilityCount] = useState(0)
+  const [abilityState, setAbilityState] = useState([abilityCount])
+
+  const addAbility = () => {
+    const tmp = [...abilityState]
+    setAbilityCount((abilityCount) => abilityCount + 1)
+    tmp.push(abilityCount + 1)
+    setAbilityState(tmp)
+  }
+
+  const delAbility = (id: number) => {
+    const tmp = [...abilityState]
+    const index = tmp.indexOf(id)
+    tmp.splice(index, 1)
+    setAbilityState(tmp)
+  }
+
   return (
-    <div className='flex flex-col w-full pl-5 gap-3'>
+    <div className='flex flex-col w-full px-[100px] gap-4'>
       <div className='grid grid-cols-4 gap-3'>
         <div className='flex flex-col gap-3 p-3'>
           <CustomInput placeholder='Development name' />
@@ -46,7 +63,24 @@ export function DevelopmentContainer() {
         </p>
         <ImageUpload multiple={true} />
       </div>
-      <button className='flex justify-center items-center h-[40px] text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-yellow-300 active:bg-yellow-400'>
+      <button
+        className='flex justify-center items-center w-[150px] h-[40px] text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-amber-300 active:bg-amber-400'
+        onClick={addAbility}
+      >
+        Add ability
+      </button>
+      <div className='p-3 flex flex-col gap-2'>
+        {abilityState.map((value, index) => {
+          return (
+            <AbilityItem
+              key={`ability+${value}`}
+              id={index}
+              delAbility={delAbility}
+            />
+          )
+        })}
+      </div>
+      <button className='flex justify-center items-center h-[40px] text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-amber-300 active:bg-amber-400'>
         S a v e
       </button>
     </div>

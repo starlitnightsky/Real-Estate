@@ -8,6 +8,7 @@ import WebScore from './WebScore'
 import { ImageUpload } from './ImageUpload'
 import { CustomInput } from './CustomInput'
 import { DataTable } from './DataTable'
+import { AbilityItem } from './AbilityItem'
 
 export {
   AgentsRegistered,
@@ -20,4 +21,5 @@ export {
   ImageUpload,
   CustomInput,
   DataTable,
+  AbilityItem,
 }
