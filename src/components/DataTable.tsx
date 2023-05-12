@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai'
+import { MdLock } from 'react-icons/md'
 
 import { EditModal } from './EditModal'
 import { DeleteModal } from './DeleteModal'
+import { ProfileModal } from './ProfileModal'
 
 export interface DataTableProps {
   columns: string[]
@@ -12,6 +14,7 @@ export interface DataTableProps {
 export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
   const [hidden, setHidden] = useState(true)
   const [hiddenDelete, setHiddenDelete] = useState(true)
+  const [hiddenProfile, setHiddenProfile] = useState(true)
   return (
     <div className='shadow overflow-hidden sm:rounded-lg'>
       <table className='min-w-full text-sm text-white'>
@@ -44,15 +47,19 @@ export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
                   </td>
                 ) : (
                   <td
-                    className='px-6 py-4 whitespace-nowrap flex flex-row justify-between mx-[10px]'
+                    className='px-6 py-4 whitespace-nowrap flex flex-row justify-center gap-6 mx-[10px]'
                     key={index}
                   >
-                    <AiFillEdit
-                      className='w-[20px] h-[20px] text-green-800 cursor-pointer'
+                    <MdLock
+                      className='w-[20px] h-[20px] text-blue-500 cursor-pointer'
                       onClick={() => setHidden(false)}
                     />
+                    <AiFillEdit
+                      className='w-[20px] h-[20px] text-green-500 cursor-pointer'
+                      onClick={() => setHiddenProfile(false)}
+                    />
                     <AiFillDelete
-                      className='w-[20px] h-[20px] text-red-800 cursor-pointer'
+                      className='w-[20px] h-[20px] text-red-500 cursor-pointer'
                       onClick={() => setHiddenDelete(false)}
                     />
                   </td>
@@ -69,6 +76,10 @@ export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
       <DeleteModal
         hidden={hiddenDelete}
         close={() => setHiddenDelete(true)}
+      />
+      <ProfileModal
+        hidden={hiddenProfile}
+        close={() => setHiddenProfile(true)}
       />
     </div>
   )

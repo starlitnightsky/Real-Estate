@@ -36,7 +36,7 @@ export function DeleteModal({ hidden, close }: ModalType) {
                 O K
               </button>
               <button
-                className='flex justify-center items-center w-[150px] h-[40px] text-gray-200 font-bold border-none rounded-[10px] select-none cursor-pointer bg-red-600 hover:bg-red-500 active:bg-red-400'
+                className='flex justify-center items-center w-[150px] h-[40px] text-gray-200 font-bold border-none rounded-[10px] select-none cursor-pointer bg-rose-600 hover:bg-rose-700 active:bg-rose-800'
                 onClick={cancel}
               >
                 Cancel

@@ -2,8 +2,8 @@ import React from 'react'
 
 // import { CustomInput } from './CustomInput'
 import { FaTimes } from 'react-icons/fa'
-import { CustomInput } from './CustomInput'
 import { CustomSelect } from './CustomSelect'
+import { CustomTextarea } from './CustomTextarea'
 
 type ModalType = {
   hidden: boolean
@@ -48,7 +48,8 @@ export function EditModal({ hidden, close }: ModalType) {
             </div>
             <div></div>
             <div className=' col-span-2'>
-              <CustomInput placeholder='message' />
+              {/* <CustomInput placeholder='message' /> */}
+              <CustomTextarea placeholder='message' />
             </div>
           </div>
           {/* <!-- Modal footer --> */}

@@ -6,55 +6,58 @@ export interface PropertyContainerProps {}
 export const PropertyContainer: React.FC<PropertyContainerProps> = () => {
   const columns = [
     'NO',
-    'ASIGNED BY',
-    'ADMIN MESSAGE',
-    'STATUS',
-    'PLAN',
-    'AMOUNT',
-    'CREATED AT',
+    'AGENT',
+    'TYPE',
+    'PRICE',
+    'FEATURED',
+    'POSTED ON',
+    'ACTION',
   ]
   const data = [
     {
       NO: '1',
-      'ASIGNED BY': 'Admin',
-      'ADMIN MESSAGE': 'Transferred',
-      STATUS: 'Doing',
-      PLAN: 'Optional',
-      AMOUNT: '1500',
-      'CREATED AT': '2023-05-01',
+      AGENT: 'Admin',
+      TYPE: 'Transferred',
+      PRICE: '10',
+      FEATURED: 'Yes',
+      'POSTED ON': '2023/5/12',
+      ACTION: '2023-05-01',
     },
     {
       NO: '2',
-      'ASIGNED BY': 'Admin',
-      'ADMIN MESSAGE': 'Transferred',
-      STATUS: 'Doing',
-      PLAN: 'Optional',
-      AMOUNT: '1500',
-      'CREATED AT': '2023-05-01',
+      AGENT: 'Admin',
+      TYPE: 'Transferred',
+      PRICE: '20',
+      FEATURED: 'No',
+      'POSTED ON': '2023/5/12',
+      ACTION: '2023-05-01',
     },
     {
       NO: '3',
-      'ASIGNED BY': 'Admin',
-      'ADMIN MESSAGE': 'Transferred',
-      STATUS: 'Doing',
-      PLAN: 'Optional',
-      AMOUNT: '1500',
-      'CREATED AT': '2023-05-01',
+      AGENT: 'Admin',
+      TYPE: 'Transferred',
+      PRICE: '30',
+      FEATURED: 'No',
+      'POSTED ON': '2023/5/12',
+      ACTION: '2023-05-01',
     },
     {
       NO: '4',
-      'ASIGNED BY': 'Admin',
-      'ADMIN MESSAGE': 'Transferred',
-      STATUS: 'Doing',
-      PLAN: 'Optional',
-      AMOUNT: '1500',
-      'CREATED AT': '2023-05-01',
+      AGENT: 'Admin',
+      TYPE: 'Transferred',
+      PRICE: '40',
+      FEATURED: 'No',
+      'POSTED ON': '2023/5/12',
+      ACTION: '2023-05-01',
     },
   ]
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col gap-3'>
+      <p className='text-2xl text-white text-start'>
+        Total Properties Listed : 500
+      </p>
       <PropertyCard />
-      <div className='flex flex-row-reverse m-[20px]'>
+      <div className='flex flex-row-reverse mx-[20px]'>
         <CustomInput
           width='w-[200px]'
           placeholder='Search...'

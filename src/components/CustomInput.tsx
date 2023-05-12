@@ -6,6 +6,7 @@ type InputType = {
   width?: string
   height?: string
   placeholder?: string
+  value?: string
 }
 
 export function CustomInput({
@@ -14,6 +15,7 @@ export function CustomInput({
   width,
   height,
   placeholder,
+  value,
 }: InputType) {
   return (
     <div className={`relative z-0 ${width ? width : 'w-full'} group flex`}>
@@ -25,6 +27,7 @@ export function CustomInput({
           width ? width : 'w-full'
         } text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-yellow-200 peer`}
         placeholder=' '
+        value={value ? value : ''}
         required={required}
       />
       <label
