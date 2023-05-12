@@ -1,8 +1,10 @@
 import React from 'react'
 import { Chart, CategoryScale } from 'chart.js/auto'
 import { Bar } from 'react-chartjs-2'
+import ChartDataLabels from 'chartjs-plugin-datalabels'
 
 Chart.register(CategoryScale)
+Chart.register(ChartDataLabels)
 
 const HorizontalBarChart = () => {
   const labels = [
@@ -24,13 +26,14 @@ const HorizontalBarChart = () => {
         data: [38, 110, 52, 70, 40, 89, 30],
         backgroundColor: [
           'rgb(110,110,110)',
-          'rgb(254,240,138)',
+          '#eab308',
           'rgb(110,110,110)',
           'rgb(110,110,110)',
           'rgb(110,110,110)',
           'rgb(110,110,110)',
           'rgb(110,110,110)',
         ],
+        color: 'white',
       },
     ],
   }
@@ -54,6 +57,12 @@ const HorizontalBarChart = () => {
     plugins: {
       title: { display: false },
       legend: { display: false },
+      datalabels: {
+        color: 'white',
+        font: {
+          size: 15,
+        },
+      },
     },
   }
   return (
