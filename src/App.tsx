@@ -10,6 +10,7 @@ import { DashboardContainer } from './containers/DashboardContainer'
 import { PaymentContainer } from './containers/PaymentContainer'
 import { DevelopmentContainer } from './containers/DevelopmentContainer'
 import { AddAgentContainer } from './containers/AddAgentContainer'
+import { AddPropertyContainer } from './containers/AddPropertyContainer'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <SideBarContainer />
         <div className='w-[100%] flex flex-col justify-center items-center h-[100vh]'>
           <TopBarContainer />
-          <div className='h-[100%] overflow-auto mr-[20px] mb-[20px] scroll1'>
+          <div className='h-[100%] overflow-auto mx-[20px] scroll1 w-full mb-[40px]'>
             <Routes>
               <Route
                 path='*'
@@ -45,6 +46,10 @@ function App() {
               <Route
                 path='/agent'
                 element={<AddAgentContainer />}
+              />
+              <Route
+                path='/propertyadd'
+                element={<AddPropertyContainer />}
               />
             </Routes>
           </div>

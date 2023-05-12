@@ -17,7 +17,7 @@ export const PaymentContainer: React.FC<PaymentContainerProps> = () => {
     'Extra Info',
   ]
   return (
-    <div className=''>
+    <div className='px-[100px]'>
       <DataTable columns={columns} />
     </div>
   )
