@@ -65,7 +65,7 @@ export function ImageUpload({ multiple }: UploadType) {
                     Minimum 2 images
                   </p>
                 )}
-            <div className='flex flex-wrap gap-3'>
+            <div className='flex flex-wrap gap-5'>
               {imageList.map((image, index) => (
                 <div
                   key={index}
@@ -79,13 +79,9 @@ export function ImageUpload({ multiple }: UploadType) {
                     }`}
                   />
                   {multiple && (
-                    <div className='image-item__btn-wrapper'>
-                      <button onClick={() => onImageUpdate(index)}>
-                        Update
-                      </button>
-                      <button onClick={() => onImageRemove(index)}>
-                        Remove
-                      </button>
+                    <div className='image-item__btn-wrapper flex gap-3 text-white'>
+                      <button onClick={() => onImageUpdate(index)}>Up</button>
+                      <button onClick={() => onImageRemove(index)}>Re</button>
                     </div>
                   )}
                 </div>
