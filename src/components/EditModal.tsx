@@ -50,11 +50,6 @@ export function EditModal({ hidden, close }: ModalType) {
             <div className=' col-span-2'>
               <CustomInput placeholder='message' />
             </div>
-          <div className='flex flex-col items-center px-[100px] gap-[20px] py-[50px]'>
-            <p className='text-white text-xl text-left'>Change Status</p>
-            <CustomInput />
-            <p className='text-white text-xl text-left'>Message</p>
-            <CustomInput placeholder='Message' />
           </div>
           {/* <!-- Modal footer --> */}
           <div className='flex justify-end px-6 py-4 space-x-2 border-t rounded-b'>
