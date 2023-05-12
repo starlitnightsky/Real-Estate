@@ -32,7 +32,7 @@ export function EditModal({ hidden, close }: ModalType) {
         <div className='relative bg-zinc-800 rounded-lg shadow-lg'>
           {/* <!-- Modal header --> */}
           <div className='flex items-start justify-between p-4 border-b rounded-t'>
-            <h3 className='text-2xl font-semibold text-white'>Change Status</h3>
+            <h3 className='text-2xl font-semibold text-white'>Edit</h3>
             <button
               className='text-white hover:text-gray-400 active:text-gray-600'
               onClick={closeModal}
@@ -50,6 +50,11 @@ export function EditModal({ hidden, close }: ModalType) {
             <div className=' col-span-2'>
               <CustomInput placeholder='message' />
             </div>
+          <div className='flex flex-col items-center px-[100px] gap-[20px] py-[50px]'>
+            <p className='text-white text-xl text-left'>Change Status</p>
+            <CustomInput />
+            <p className='text-white text-xl text-left'>Message</p>
+            <CustomInput placeholder='Message' />
           </div>
           {/* <!-- Modal footer --> */}
           <div className='flex justify-end px-6 py-4 space-x-2 border-t rounded-b'>
