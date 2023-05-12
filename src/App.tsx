@@ -30,7 +30,7 @@ function App() {
           <SideBarContainer setNavigation={changeNavigationValue} />
           <div className='w-[100%] flex flex-col justify-center items-center h-[100vh]'>
             <TopBarContainer setNavigation={changeNavigationValue} />
-            <div className='h-[100%] overflow-auto mr-[20px] scroll1 w-full mb-[40px]'>
+            <div className='h-[100%] overflow-auto mr-[20px] scroll1 w-full mb-[40px] px-[100px]'>
               <Routes>
                 <Route
                   path='*'

@@ -21,7 +21,7 @@ export function AddPropertyContainer() {
   }
 
   return (
-    <div className='flex flex-col gap-10 w-full px-[100px]'>
+    <div className='flex flex-col gap-10 w-full'>
       <div className='grid grid-cols-4 gap-10'>
         <div className='flex flex-col gap-5'>
           <p className='text-xl text-white text-start'>Location</p>
