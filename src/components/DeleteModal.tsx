@@ -6,9 +6,6 @@ type ModalType = {
 }
 
 export function DeleteModal({ hidden, close }: ModalType) {
-  const closeModal = () => {
-    close()
-  }
   const ok = () => {
     close()
   }
