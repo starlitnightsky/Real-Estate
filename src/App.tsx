@@ -9,6 +9,7 @@ import { TopBarContainer } from './containers/TopBarContainer'
 import { DashboardContainer } from './containers/DashboardContainer'
 import { PaymentContainer } from './containers/PaymentContainer'
 import { DevelopmentContainer } from './containers/DevelopmentContainer'
+import { AddAgentContainer } from './containers/AddAgentContainer'
 
 function App() {
   return (
@@ -40,6 +41,10 @@ function App() {
               <Route
                 path='/development'
                 element={<DevelopmentContainer />}
+              />
+              <Route
+                path='/agent'
+                element={<AddAgentContainer />}
               />
             </Routes>
           </div>

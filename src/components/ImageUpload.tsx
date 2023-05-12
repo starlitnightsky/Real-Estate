@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import ImageUploading, { ImageListType } from 'react-images-uploading'
 import { FaFileUpload } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
+import { IoRefreshCircle } from 'react-icons/io5'
+import { TiDelete } from 'react-icons/ti'
 
 type UploadType = {
   multiple: boolean
+  text?: string
 }
-export function ImageUpload({ multiple }: UploadType) {
+export function ImageUpload({ multiple, text }: UploadType) {
   const [images, setImages] = useState([])
   const maxNumber = 69
 
@@ -54,17 +57,15 @@ export function ImageUpload({ multiple }: UploadType) {
                 Remove
               </button>
             </div>
-            {!multiple
-              ? (!imageList || (imageList && imageList.length === 0)) && (
-                  <p className='text-4xl font-semibold text-white items-center mt-10'>
-                    Banner image
-                  </p>
-                )
-              : (!imageList || (imageList && imageList.length === 0)) && (
-                  <p className='text-4xl font-semibold text-white'>
-                    Minimum 2 images
-                  </p>
-                )}
+            {(!imageList || (imageList && imageList.length === 0)) && (
+              <p
+                className={`text-4xl font-semibold text-white items-center ${
+                  !multiple ? 'mt-10' : ''
+                }`}
+              >
+                {text}
+              </p>
+            )}
             <div className='flex flex-wrap gap-5'>
               {imageList.map((image, index) => (
                 <div
@@ -79,9 +80,13 @@ export function ImageUpload({ multiple }: UploadType) {
                     }`}
                   />
                   {multiple && (
-                    <div className='image-item__btn-wrapper flex gap-3 text-white'>
-                      <button onClick={() => onImageUpdate(index)}>Up</button>
-                      <button onClick={() => onImageRemove(index)}>Re</button>
+                    <div className='image-item__btn-wrapper flex text-yellow-200'>
+                      <button onClick={() => onImageUpdate(index)}>
+                        <IoRefreshCircle className='w-[30px] h-[30px]' />
+                      </button>
+                      <button onClick={() => onImageRemove(index)}>
+                        <TiDelete className='w-[35px] h-[35px]' />
+                      </button>
                     </div>
                   )}
                 </div>

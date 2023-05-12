@@ -1,5 +1,6 @@
 import React from 'react'
 import { CustomInput } from './CustomInput'
+import { FaTimes } from 'react-icons/fa'
 
 type AbilityItemType = {
   id: number
@@ -16,10 +17,10 @@ export function AbilityItem({ id, delAbility }: AbilityItemType) {
       <CustomInput placeholder='Place' />
       <CustomInput />
       <button
-        className='flex justify-center items-center text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-yellow-300 active:bg-yellow-400'
         onClick={delTicket}
+        className='text-white hover:text-gray-400 active:text-gray-600'
       >
-        close
+        <FaTimes className='w-[30px] h-[30px]' />
       </button>
     </div>
   )

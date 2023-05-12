@@ -26,7 +26,10 @@ export function DevelopmentContainer() {
         <div className='flex flex-col gap-3 p-3'>
           <CustomInput placeholder='Development name' />
           <div className='h-[280px]'>
-            <ImageUpload multiple={false} />
+            <ImageUpload
+              multiple={false}
+              text='Banner Image'
+            />
           </div>
         </div>
 
@@ -61,7 +64,10 @@ export function DevelopmentContainer() {
         <p className='text-xl font-semibold text-white text-start'>
           Upload Development Image
         </p>
-        <ImageUpload multiple={true} />
+        <ImageUpload
+          multiple={true}
+          text='Minimum 2 images'
+        />
       </div>
       <button
         className='flex justify-center items-center w-[150px] h-[40px] text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-amber-300 active:bg-amber-400'
