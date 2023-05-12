@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai'
 
 import { EditModal } from './EditModal'
+import { DeleteModal } from './DeleteModal'
 
 export interface DataTableProps {
   columns: string[]
@@ -10,6 +11,7 @@ export interface DataTableProps {
 
 export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
   const [hidden, setHidden] = useState(true)
+  const [hiddenDelete, setHiddenDelete] = useState(true)
   return (
     <div className='shadow overflow-hidden sm:rounded-lg'>
       <table className='min-w-full text-sm text-white'>
@@ -49,7 +51,10 @@ export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
                       className='w-[20px] h-[20px] text-green-800 cursor-pointer'
                       onClick={() => setHidden(false)}
                     />
-                    <AiFillDelete className='w-[20px] h-[20px] text-red-800 cursor-pointer' />
+                    <AiFillDelete
+                      className='w-[20px] h-[20px] text-red-800 cursor-pointer'
+                      onClick={() => setHiddenDelete(false)}
+                    />
                   </td>
                 )
               })}
@@ -60,6 +65,10 @@ export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
       <EditModal
         hidden={hidden}
         close={() => setHidden(true)}
+      />
+      <DeleteModal
+        hidden={hiddenDelete}
+        close={() => setHiddenDelete(true)}
       />
     </div>
   )
