@@ -2,6 +2,8 @@ import React from 'react'
 
 // import { CustomInput } from './CustomInput'
 import { FaTimes } from 'react-icons/fa'
+import { CustomInput } from './CustomInput'
+import { CustomSelect } from './CustomSelect'
 
 type ModalType = {
   hidden: boolean
@@ -39,19 +41,15 @@ export function EditModal({ hidden, close }: ModalType) {
             </button>
           </div>
           {/* <!-- Modal body --> */}
-          <div className='p-6 space-y-6'>
-            <p className='text-base leading-relaxed text-white'>
-              With less than a month to go before the European Union enacts new
-              consumer privacy laws for its citizens, companies around the world
-              are updating their terms of service agreements to comply.
-            </p>
-            <p className='text-base leading-relaxed text-white'>
-              The European Union's General Data Protection Regulation (G.D.P.R.)
-              goes into effect on May 25 and is meant to ensure a common set of
-              data rights in the European Union. It requires organizations to
-              notify users as soon as possible of high-risk data breaches that
-              could personally affect them.
-            </p>
+          <div className='grid grid-cols-2 gap-10 px-[50px] py-[50px]'>
+            <div className='flex flex-col gap-5'>
+              <p className='text-xl text-white text-start'>Change status</p>
+              <CustomSelect />
+            </div>
+            <div></div>
+            <div className=' col-span-2'>
+              <CustomInput placeholder='message' />
+            </div>
           </div>
           {/* <!-- Modal footer --> */}
           <div className='flex justify-end px-6 py-4 space-x-2 border-t rounded-b'>

@@ -46,10 +46,10 @@ export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
                     key={index}
                   >
                     <AiFillEdit
-                      className=' text-green-800 cursor-pointer'
+                      className='w-[20px] h-[20px] text-green-800 cursor-pointer'
                       onClick={() => setHidden(false)}
                     />
-                    <AiFillDelete className='text-red-800 cursor-pointer' />
+                    <AiFillDelete className='w-[20px] h-[20px] text-red-800 cursor-pointer' />
                   </td>
                 )
               })}
