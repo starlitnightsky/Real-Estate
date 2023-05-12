@@ -11,6 +11,7 @@ import { DataTable } from './DataTable'
 import { AbilityItem } from './AbilityItem'
 import { LocalityItem } from './LocalityItem'
 import { PropertyCard } from './PropertyCard'
+import { CustomSelect } from './CustomSelect'
 
 export {
   AgentsRegistered,
@@ -26,4 +27,5 @@ export {
   AbilityItem,
   LocalityItem,
   PropertyCard,
+  CustomSelect,
 }
