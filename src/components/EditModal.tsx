@@ -3,6 +3,7 @@ import React from 'react'
 // import { CustomInput } from './CustomInput'
 import { FaTimes } from 'react-icons/fa'
 import { CustomInput } from './CustomInput'
+import { CustomSelect } from './CustomSelect'
 
 type ModalType = {
   hidden: boolean
@@ -40,6 +41,15 @@ export function EditModal({ hidden, close }: ModalType) {
             </button>
           </div>
           {/* <!-- Modal body --> */}
+          <div className='grid grid-cols-2 gap-10 px-[50px] py-[50px]'>
+            <div className='flex flex-col gap-5'>
+              <p className='text-xl text-white text-start'>Change status</p>
+              <CustomSelect />
+            </div>
+            <div></div>
+            <div className=' col-span-2'>
+              <CustomInput placeholder='message' />
+            </div>
           <div className='flex flex-col items-center px-[100px] gap-[20px] py-[50px]'>
             <p className='text-white text-xl text-left'>Change Status</p>
             <CustomInput />
