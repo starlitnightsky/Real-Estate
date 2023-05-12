@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { AiOutlineBell, AiOutlineSearch } from 'react-icons/ai'
 import { FiLogOut } from 'react-icons/fi'
 
@@ -13,21 +12,11 @@ export const TopBarContainer: React.FC<TopBarContainerProps> = ({
   setNavigation,
 }) => {
   const currentNavigation = useContext(NavigationContext)
-  const navigate = useNavigate()
   return (
     <div className='flex flex-row justify-between w-[100%] h-[150px] items-center px-[100px]'>
       <div className='flex'>
-        <div
-          onClick={() => {
-            navigate('/dashboard')
-            setNavigation('dashboard')
-          }}
-          className='text-[rgba(255,255,255,0.8)] text-[30px] cursor-pointer'
-        >
-          Home
-        </div>
         <h2 className='text-[rgba(255,255,255,0.8)] text-[30px]'>
-          /{currentNavigation.toUpperCase()}
+          {currentNavigation.toUpperCase()}
         </h2>
       </div>
       <div className='flex justify-center items-center'>

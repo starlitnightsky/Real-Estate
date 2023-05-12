@@ -8,17 +8,20 @@ export interface DataTableProps {
 export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
   return (
     <div className='shadow overflow-hidden sm:rounded-lg px-[100px]'>
-      <table className='min-w-full text-sm text-gray-400'>
-        <thead className='bg-gray-800 text-xs uppercase font-medium'>
+      <table className='min-w-full text-sm text-white'>
+        <thead className='bg-[rgb(33,35,37)] text-xs uppercase font-medium text-center'>
           <tr>
             {columns.map((column) => (
-              <th scope='col' className='px-6 py-3 text-left tracking-wider'>
+              <th
+                scope='col'
+                className='px-6 py-3 text-left tracking-wider text-center'
+              >
                 {column}
               </th>
             ))}
           </tr>
         </thead>
-        <tbody className='bg-gray-800'>
+        <tbody className='bg-[rgb(33,35,37)]'>
           {data.map((val: any) => {
             return (
               <tr className='bg-black bg-opacity-20'>
