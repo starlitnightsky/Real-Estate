@@ -12,7 +12,14 @@ export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
         <thead className='bg-[rgb(33,35,37)] text-xs uppercase font-medium text-center'>
           <tr>
             {columns.map((column) => (
+
+              <th
+                scope='col'
+                className='px-6 py-3 tracking-wider text-center'
+              >
+
               <th scope='col' className='px-6 py-3 tracking-wider text-center'>
+
                 {column}
               </th>
             ))}
