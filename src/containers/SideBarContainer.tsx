@@ -2,9 +2,13 @@ import React from 'react'
 import avatar from '../assets/img/avatar_15.jpg'
 import { MenuItem } from '../components/MenuItem'
 
-export interface SideBarContainerProps {}
+export interface SideBarContainerProps {
+  setNavigation: (val: string) => void
+}
 
-export const SideBarContainer: React.FC<SideBarContainerProps> = () => {
+export const SideBarContainer: React.FC<SideBarContainerProps> = ({
+  setNavigation,
+}) => {
   return (
     <div className='flex w-[400px] h-[100vh] border-r-2 border-r-[rgba(203,213,225,0.1)] pt-[50px] pb-[50px] flex-col'>
       <div className='flex flex-row justify-center items-center gap-3'>
@@ -29,62 +33,70 @@ export const SideBarContainer: React.FC<SideBarContainerProps> = () => {
         <div className='flex flex-col '>
           <MenuItem
             title='Dashboard'
-            type='appStore'
-            active={true}
+            type='dashboard'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='Development'
             type='development'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='Payment'
             type='payment'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='My Leads'
             type='leads'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='Add agent'
             type='agent'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='Agent listing'
             type='agentlist'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='Property'
             type='property'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='Add property'
             type='propertyadd'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='List development'
             type='developmentlist'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='Journals'
             type='journals'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='Articles'
             type='articles'
+            setNavigation={setNavigation}
           />
           <MenuItem
             title='Upload Images'
             type='uploadimages'
+            setNavigation={setNavigation}
           />
         </div>
       </div>
       <div className='flex flex-row items-center justify-center self-center'>
         <h1 className='text-gray-600 text-[15px] font-bold mr-[15px]'>Light</h1>
         <div className='flex items-center justify-centermb-12'>
-          <label
-            htmlFor='toggleB'
-            className='flex items-center cursor-pointer'
-          >
+          <label htmlFor='toggleB' className='flex items-center cursor-pointer'>
             <div className='relative'>
               <input
                 type='checkbox'
