@@ -7,7 +7,7 @@ export interface DataTableProps {
 
 export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
   return (
-    <div className='shadow overflow-hidden sm:rounded-lg'>
+    <div className='shadow overflow-hidden sm:rounded-lg px-[100px]'>
       <table className='min-w-full text-sm text-gray-400'>
         <thead className='bg-gray-800 text-xs uppercase font-medium'>
           <tr>

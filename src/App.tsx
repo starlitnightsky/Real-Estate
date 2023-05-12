@@ -14,6 +14,7 @@ import { AddPropertyContainer } from './containers/AddPropertyContainer'
 import { LeadsContainer } from './containers/LeadsContainer'
 import { AgentListContainer } from './containers/AgentListContainer'
 import { ListDevelopmentContainer } from './containers/ListDevelopmentContainer'
+import { PropertyContainer } from './containers/PropertyContainer'
 
 export const NavigationContext = createContext('dashboard')
 function App() {
@@ -49,18 +50,10 @@ function App() {
                   path='/developmentlist'
                   element={<ListDevelopmentContainer />}
                 />
-                <Route
-                path='/development'
-                element={<DevelopmentContainer />}
-              />
-              <Route
-                path='/agent'
-                element={<AddAgentContainer />}
-              />
-              <Route
-                path='/propertyadd'
-                element={<AddPropertyContainer />}
-              />
+                <Route path='/development' element={<DevelopmentContainer />} />
+                <Route path='/agent' element={<AddAgentContainer />} />
+                <Route path='/propertyadd' element={<AddPropertyContainer />} />
+                <Route path='/property' element={<PropertyContainer />} />
               </Routes>
             </div>
           </div>
