@@ -19,7 +19,7 @@ export const TopBarContainer: React.FC<TopBarContainerProps> = () => {
         />
       </div>
       <div className='flex'>
-        <div className='flex w-[100px] h-[45px] justify-center text-gray-700 font-bold border-gray-400 border rounded-[10px] items-center select-none cursor-pointer bg-[rgb(255,242,121)]'>
+        <div className='flex w-[100px] h-[45px] justify-center text-gray-700 font-bold border-gray-400 border rounded-[10px] items-center select-none cursor-pointer bg-yellow-200 hover:bg-amber-300 active:bg-amber-400'>
           <p>Upgrade</p>
         </div>
         <div className='flex justify-center items-center border-gray-700 border-solid border-[1px] ml-[20px] p-[10px] rounded-[10px] hover:cursor-pointer hover:bg-gray-700 active:bg-gray-800'>

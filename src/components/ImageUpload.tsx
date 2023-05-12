@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import ImageUploading, { ImageListType } from 'react-images-uploading'
+import { FaFileUpload } from 'react-icons/fa'
+import { MdDelete } from 'react-icons/md'
+import { IoRefreshCircle } from 'react-icons/io5'
+import { TiDelete } from 'react-icons/ti'
 
 type UploadType = {
   multiple: boolean
+  text?: string
 }
-export function ImageUpload({ multiple }: UploadType) {
+export function ImageUpload({ multiple, text }: UploadType) {
   const [images, setImages] = useState([])
   const maxNumber = 69
 
@@ -12,12 +17,11 @@ export function ImageUpload({ multiple }: UploadType) {
     imageList: ImageListType,
     addUpdateIndex: number[] | undefined
   ) => {
-    // console.log(imageList, addUpdateIndex)
     setImages(imageList as never[])
   }
 
   return (
-    <div>
+    <div className=' w-full h-full border p-3'>
       <ImageUploading
         multiple={multiple}
         value={images}
@@ -33,18 +37,36 @@ export function ImageUpload({ multiple }: UploadType) {
           isDragging,
           dragProps,
         }) => (
-          // write your building UI
-          <div className='upload__image-wrapper'>
-            <button
-              style={isDragging ? { color: 'red' } : undefined}
-              onClick={onImageUpload}
-              {...dragProps}
-            >
-              Upload
-            </button>
-            &nbsp;
-            <button onClick={onImageRemoveAll}>Remove</button>
-            <div className='flex flex-wrap gap-3'>
+          <div className='upload__image-wrapper flex flex-col gap-3 items-center'>
+            <div className='flex justify-center gap-3'>
+              <button
+                style={isDragging ? { color: 'red' } : undefined}
+                className='flex justify-center items-center w-[100px] h-[35px] text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-amber-300 active:bg-amber-400'
+                onClick={onImageUpload}
+                {...dragProps}
+              >
+                <FaFileUpload className='w-[20px] h-[20px] mr-2 text-gray-700' />
+                Upload
+              </button>
+              &nbsp;
+              <button
+                className='flex justify-center items-center w-[100px] h-[35px] text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-amber-300 active:bg-amber-400'
+                onClick={onImageRemoveAll}
+              >
+                <MdDelete className='w-[23px] h-[23px] mr-1 text-gray-700' />
+                Remove
+              </button>
+            </div>
+            {(!imageList || (imageList && imageList.length === 0)) && (
+              <p
+                className={`text-4xl font-semibold text-white items-center ${
+                  !multiple ? 'mt-10' : ''
+                }`}
+              >
+                {text}
+              </p>
+            )}
+            <div className='flex flex-wrap gap-5'>
               {imageList.map((image, index) => (
                 <div
                   key={index}
@@ -54,18 +76,16 @@ export function ImageUpload({ multiple }: UploadType) {
                     src={image.dataURL}
                     alt=''
                     className={`${
-                      multiple
-                        ? 'w-[50px] h-[50px]'
-                        : 'rounded-full w-[200px] h-[200px]'
+                      multiple ? 'w-[50px] h-[50px]' : 'w-[200px] h-[200px]'
                     }`}
                   />
                   {multiple && (
-                    <div className='image-item__btn-wrapper'>
+                    <div className='image-item__btn-wrapper flex text-yellow-200'>
                       <button onClick={() => onImageUpdate(index)}>
-                        Update
+                        <IoRefreshCircle className='w-[30px] h-[30px]' />
                       </button>
                       <button onClick={() => onImageRemove(index)}>
-                        Remove
+                        <TiDelete className='w-[35px] h-[35px]' />
                       </button>
                     </div>
                   )}
