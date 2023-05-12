@@ -21,7 +21,7 @@ export function DevelopmentContainer() {
   }
 
   return (
-    <div className='flex flex-col w-full px-[100px] gap-4'>
+    <div className='flex flex-col w-full gap-4'>
       <div className='grid grid-cols-4 gap-3'>
         <div className='flex flex-col gap-3 p-3'>
           <CustomInput placeholder='Development name' />

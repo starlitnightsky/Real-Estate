@@ -4,7 +4,7 @@ import { CustomInput, ImageUpload } from '../components'
 
 export function AddAgentContainer() {
   return (
-    <div className='grid grid-cols-3 p-3 gap-10 pt-24 px-[100px]'>
+    <div className='grid grid-cols-3 p-3 gap-10 pt-24'>
       <div className='h-[280px]'>
         <ImageUpload
           multiple={false}
