@@ -2,6 +2,7 @@ import React from 'react'
 
 // import { CustomInput } from './CustomInput'
 import { FaTimes } from 'react-icons/fa'
+import { CustomInput } from './CustomInput'
 
 type ModalType = {
   hidden: boolean
@@ -30,7 +31,7 @@ export function EditModal({ hidden, close }: ModalType) {
         <div className='relative bg-zinc-800 rounded-lg shadow-lg'>
           {/* <!-- Modal header --> */}
           <div className='flex items-start justify-between p-4 border-b rounded-t'>
-            <h3 className='text-2xl font-semibold text-white'>Change Status</h3>
+            <h3 className='text-2xl font-semibold text-white'>Edit</h3>
             <button
               className='text-white hover:text-gray-400 active:text-gray-600'
               onClick={closeModal}
@@ -39,19 +40,11 @@ export function EditModal({ hidden, close }: ModalType) {
             </button>
           </div>
           {/* <!-- Modal body --> */}
-          <div className='p-6 space-y-6'>
-            <p className='text-base leading-relaxed text-white'>
-              With less than a month to go before the European Union enacts new
-              consumer privacy laws for its citizens, companies around the world
-              are updating their terms of service agreements to comply.
-            </p>
-            <p className='text-base leading-relaxed text-white'>
-              The European Union's General Data Protection Regulation (G.D.P.R.)
-              goes into effect on May 25 and is meant to ensure a common set of
-              data rights in the European Union. It requires organizations to
-              notify users as soon as possible of high-risk data breaches that
-              could personally affect them.
-            </p>
+          <div className='flex flex-col items-center px-[100px] gap-[20px] py-[50px]'>
+            <p className='text-white text-xl text-left'>Change Status</p>
+            <CustomInput />
+            <p className='text-white text-xl text-left'>Message</p>
+            <CustomInput placeholder='Message' />
           </div>
           {/* <!-- Modal footer --> */}
           <div className='flex justify-end px-6 py-4 space-x-2 border-t rounded-b'>
