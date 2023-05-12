@@ -1,5 +1,5 @@
 import React from 'react'
-import { CustomInput, DataTable } from '../components'
+import { CustomInput, DataTable, PropertyCard } from '../components'
 
 export interface PropertyContainerProps {}
 
@@ -53,11 +53,18 @@ export const PropertyContainer: React.FC<PropertyContainerProps> = () => {
   ]
   return (
     <div className='flex flex-col'>
+      <PropertyCard />
       <div className='flex flex-row-reverse m-[20px]'>
-        <CustomInput width='w-[200px]' placeholder='Search...'></CustomInput>
+        <CustomInput
+          width='w-[200px]'
+          placeholder='Search...'
+        ></CustomInput>
       </div>
       <div>
-        <DataTable columns={columns} data={data} />
+        <DataTable
+          columns={columns}
+          data={data}
+        />
       </div>
       <div className='text-white mt-[20px]'>Showing 1 to 4 of 0 entries</div>
     </div>

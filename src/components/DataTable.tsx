@@ -14,7 +14,7 @@ export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
             {columns.map((column) => (
               <th
                 scope='col'
-                className='px-6 py-3 text-left tracking-wider text-center'
+                className='px-6 py-3 tracking-wider text-center'
               >
                 {column}
               </th>

@@ -10,6 +10,7 @@ import { CustomInput } from './CustomInput'
 import { DataTable } from './DataTable'
 import { AbilityItem } from './AbilityItem'
 import { LocalityItem } from './LocalityItem'
+import { PropertyCard } from './PropertyCard'
 
 export {
   AgentsRegistered,
@@ -24,4 +25,5 @@ export {
   DataTable,
   AbilityItem,
   LocalityItem,
+  PropertyCard,
 }
