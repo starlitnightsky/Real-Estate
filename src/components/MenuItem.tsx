@@ -7,12 +7,12 @@ import { MdSpaceDashboard, MdDeveloperBoard } from 'react-icons/md'
 import { IoMdWallet } from 'react-icons/io'
 import { FaUserPlus } from 'react-icons/fa'
 import { IoIosJournal } from 'react-icons/io'
-import { MdSettings } from 'react-icons/md'
 import { HiPlusCircle } from 'react-icons/hi'
 import { RiArticleFill } from 'react-icons/ri'
 import { ImUpload } from 'react-icons/im'
 import { TfiLayoutListPost } from 'react-icons/tfi'
 import { BsPersonLinesFill } from 'react-icons/bs'
+import { FaDropbox } from 'react-icons/fa'
 
 import { NavigationContext } from '../App'
 type ICON = 'appStore' | 'fileText' | 'calendar' | 'setting' | any
@@ -44,7 +44,7 @@ const ICONS: Record<ICON, React.ReactNode> = {
     <BsPersonLinesFill className='w-[25px] h-[25px] ml-[15px] text-[rgba(255,255,255,0.8)]' />
   ),
   property: (
-    <MdSettings className='w-[25px] h-[25px] ml-[15px] text-[rgba(255,255,255,0.8)]' />
+    <FaDropbox className='w-[25px] h-[25px] ml-[15px] text-[rgba(255,255,255,0.8)]' />
   ),
   propertyadd: (
     <HiPlusCircle className='w-[25px] h-[25px] ml-[15px] text-[rgba(255,255,255,0.8)]' />

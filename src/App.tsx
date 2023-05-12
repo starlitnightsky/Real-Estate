@@ -10,6 +10,7 @@ import { DashboardContainer } from './containers/DashboardContainer'
 import { PaymentContainer } from './containers/PaymentContainer'
 import { DevelopmentContainer } from './containers/DevelopmentContainer'
 import { AddAgentContainer } from './containers/AddAgentContainer'
+import { AddPropertyContainer } from './containers/AddPropertyContainer'
 import { LeadsContainer } from './containers/LeadsContainer'
 import { AgentListContainer } from './containers/AgentListContainer'
 import { ListDevelopmentContainer } from './containers/ListDevelopmentContainer'
@@ -28,7 +29,7 @@ function App() {
           <SideBarContainer setNavigation={changeNavigationValue} />
           <div className='w-[100%] flex flex-col justify-center items-center h-[100vh]'>
             <TopBarContainer setNavigation={changeNavigationValue} />
-            <div className='h-[100%] overflow-auto mr-[20px] mb-[20px] scroll1'>
+            <div className='h-[100%] overflow-auto mr-[20px] mb-[20px] scroll1 w-full mb-[40px]'>
               <Routes>
                 <Route
                   path='*'
@@ -48,6 +49,18 @@ function App() {
                   path='/developmentlist'
                   element={<ListDevelopmentContainer />}
                 />
+                <Route
+                path='/development'
+                element={<DevelopmentContainer />}
+              />
+              <Route
+                path='/agent'
+                element={<AddAgentContainer />}
+              />
+              <Route
+                path='/propertyadd'
+                element={<AddPropertyContainer />}
+              />
               </Routes>
             </div>
           </div>

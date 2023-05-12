@@ -9,6 +9,7 @@ import { ImageUpload } from './ImageUpload'
 import { CustomInput } from './CustomInput'
 import { DataTable } from './DataTable'
 import { AbilityItem } from './AbilityItem'
+import { LocalityItem } from './LocalityItem'
 
 export {
   AgentsRegistered,
@@ -22,4 +23,5 @@ export {
   CustomInput,
   DataTable,
   AbilityItem,
+  LocalityItem,
 }
