@@ -38,7 +38,7 @@ export function ImageUpload({ multiple }: UploadType) {
             <div className='flex justify-center gap-3'>
               <button
                 style={isDragging ? { color: 'red' } : undefined}
-                className='flex justify-center items-center w-[100px] h-[35px] text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-yellow-300 active:bg-yellow-400'
+                className='flex justify-center items-center w-[100px] h-[35px] text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-amber-300 active:bg-amber-400'
                 onClick={onImageUpload}
                 {...dragProps}
               >
@@ -47,7 +47,7 @@ export function ImageUpload({ multiple }: UploadType) {
               </button>
               &nbsp;
               <button
-                className='flex justify-center items-center w-[100px] h-[35px] text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-yellow-300 active:bg-yellow-400'
+                className='flex justify-center items-center w-[100px] h-[35px] text-gray-700 font-bold border-gray-400 border rounded-[10px] select-none cursor-pointer bg-yellow-200 hover:bg-amber-300 active:bg-amber-400'
                 onClick={onImageRemoveAll}
               >
                 <MdDelete className='w-[23px] h-[23px] mr-1 text-gray-700' />
