@@ -56,21 +56,19 @@ export function CustomSelect({
     }
   }
   return (
-    <div>
-      <select
-        className='block py-2.5 px-0 w-full text-xl bg-transparent border-0 border-b-2 appearance-none text-gray-300 border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-200 peer'
-        onChange={(item) => show(item.currentTarget.value)}
-      >
-        {optionText.map((str, index) => (
-          <option
-            value={str}
-            className='bg-zinc-800 text-gray-300 border-none'
-            key={index}
-          >
-            {str}
-          </option>
-        ))}
-      </select>
-    </div>
+    <select
+      className='block py-2.5 px-0 w-full text-base bg-transparent border-0 border-b-2 appearance-none text-gray-300 border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-200 peer'
+      onChange={(item) => show(item.currentTarget.value)}
+    >
+      {optionText.map((str, index) => (
+        <option
+          value={str}
+          className='bg-zinc-800 text-gray-300 border-none'
+          key={index}
+        >
+          {str}
+        </option>
+      ))}
+    </select>
   )
 }

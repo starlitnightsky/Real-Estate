@@ -1,12 +1,30 @@
 import React from 'react'
 import Select from 'react-select'
-import { alllanguages } from '../config'
+
+const features = [
+  'Balcony',
+  'Pool',
+  'Built-in wardrobes',
+  'Gym',
+  'Equipped kitchen',
+  'Walk-in closet',
+  'Spa',
+  'Covered Parking',
+  'Study room',
+  'Private pool',
+  'Garden',
+  'Security',
+  'Concierge',
+  'Maid service',
+  'Jacuzzi',
+  'Others',
+]
 
 export interface MultiSelectProps {}
 
-export const MultiSelect: React.FC<MultiSelectProps> = () => {
+export const MultiFeatureSelect: React.FC<MultiSelectProps> = () => {
   const allOptions: { value: number; label: string }[] = []
-  alllanguages.map((val, ind) => allOptions.push({ value: ind, label: val }))
+  features.map((val, ind) => allOptions.push({ value: ind, label: val }))
   const selectStyles = {
     control: (base: any) => ({
       ...base,
@@ -36,7 +54,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = () => {
           isMulti
           options={allOptions}
           styles={selectStyles}
-          placeholder='Type your language here...'
+          placeholder='Features here...'
         />
       </div>
     </div>

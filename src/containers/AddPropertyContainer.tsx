@@ -6,6 +6,7 @@ import {
   LocalityItem,
   CustomSelect,
   CustomTextarea,
+  MultiFeatureSelect,
 } from '../components'
 
 export function AddPropertyContainer() {
@@ -168,7 +169,7 @@ export function AddPropertyContainer() {
             </div>
             {checkedFeature && (
               <div className='flex flex-col gap-2'>
-                <CustomInput placeholder='Features' />
+                <MultiFeatureSelect />
                 {!hiddenFeature && (
                   <CustomInput placeholder='Input your own feature' />
                 )}

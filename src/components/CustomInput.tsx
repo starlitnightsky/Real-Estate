@@ -38,7 +38,7 @@ export function CustomInput({
     }
   }
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col w-full'>
       <div className={`relative z-0 ${width ? width : 'w-full'} group flex`}>
         <input
           type={type ? type : 'text'}

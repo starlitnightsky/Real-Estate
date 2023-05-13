@@ -13,6 +13,8 @@ import { LocalityItem } from './LocalityItem'
 import { PropertyCard } from './PropertyCard'
 import { CustomSelect } from './CustomSelect'
 import { CustomTextarea } from './CustomTextarea'
+import { MultiSelect } from './MultiSelect'
+import { MultiFeatureSelect } from './MultiFeatureSelect'
 
 export {
   AgentsRegistered,
@@ -30,4 +32,6 @@ export {
   PropertyCard,
   CustomSelect,
   CustomTextarea,
+  MultiSelect,
+  MultiFeatureSelect,
 }
