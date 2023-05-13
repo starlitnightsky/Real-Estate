@@ -63,3 +63,9 @@ input:checked ~ .dot {
 .scroll1::-webkit-scrollbar-thumb {
   background: #666;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
