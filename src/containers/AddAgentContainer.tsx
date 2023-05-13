@@ -58,8 +58,12 @@ export function AddAgentContainer() {
             </option>
           </select>
         </div>
+        <CustomInput
+          placeholder='RERA License No'
+          type='number'
+        />
         <CustomInput placeholder='Language Skills' />
-        <CustomInput placeholder='Specialities' />
+
         <CustomInput
           placeholder='Whatsapp Contact Number'
           type='number'
