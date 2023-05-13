@@ -195,7 +195,7 @@ export function AddPropertyContainer() {
         </p>
         <ImageUpload
           multiple={true}
-          text='Minimum 2 images'
+          text='Minimum 3 images, Maximum 10 images'
         />
       </div>
       <div className='flex flex-col gap-5'>

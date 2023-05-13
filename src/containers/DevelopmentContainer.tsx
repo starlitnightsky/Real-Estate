@@ -66,7 +66,7 @@ export function DevelopmentContainer() {
         </p>
         <ImageUpload
           multiple={true}
-          text='Minimum 2 images'
+          text='Minimum 3 images, Maximum 10 images'
         />
       </div>
       <button
