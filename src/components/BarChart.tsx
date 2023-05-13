@@ -47,6 +47,9 @@ const BarChart = () => {
     plugins: {
       title: { display: false },
       legend: { display: false },
+      datalabels: {
+        display: false,
+      },
     },
   }
   return (

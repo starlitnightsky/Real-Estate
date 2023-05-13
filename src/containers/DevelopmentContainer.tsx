@@ -22,10 +22,10 @@ export function DevelopmentContainer() {
 
   return (
     <div className='flex flex-col w-full gap-4'>
-      <div className='grid grid-cols-4 gap-3'>
+      <div className='grid grid-cols-4 gap-3 justify-items-center'>
         <div className='flex flex-col gap-3 p-3'>
           <CustomInput placeholder='Development name' />
-          <div className='h-[280px]'>
+          <div className='h-[280px] w-[280px]'>
             <ImageUpload
               multiple={false}
               text='Banner Image'
@@ -33,7 +33,7 @@ export function DevelopmentContainer() {
           </div>
         </div>
 
-        <div className='flex flex-col justify-between p-3'>
+        <div className='flex flex-col justify-between p-3 w-full'>
           <CustomInput placeholder='Area' />
           <CustomInput
             placeholder='Zip code'
@@ -43,7 +43,7 @@ export function DevelopmentContainer() {
           <CustomInput placeholder='Property type' />
         </div>
 
-        <div className='flex flex-col justify-between p-3'>
+        <div className='flex flex-col justify-between p-3 w-full'>
           <CustomInput placeholder='Building type' />
           <CustomInput
             placeholder=' Copletion date'
@@ -53,7 +53,7 @@ export function DevelopmentContainer() {
           <CustomInput placeholder='Floors' />
         </div>
 
-        <div className='flex flex-col justify-between p-3'>
+        <div className='flex flex-col justify-between p-3 w-full'>
           <CustomInput placeholder='Area/City' />
           <CustomInput placeholder='Developer name' />
           <CustomInput placeholder='Architect name' />

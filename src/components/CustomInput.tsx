@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 type InputType = {
   type?: string
@@ -17,6 +17,7 @@ export function CustomInput({
   placeholder,
   value,
 }: InputType) {
+  const [text, setText] = useState(value)
   return (
     <div className={`relative z-0 ${width ? width : 'w-full'} group flex`}>
       <input
@@ -27,7 +28,8 @@ export function CustomInput({
           width ? width : 'w-full'
         } text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-yellow-200 peer`}
         placeholder=' '
-        value={value ? value : ''}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
         required={required}
       />
       <label

@@ -34,6 +34,9 @@ const DoughnutChart = () => {
           },
         ],
       },
+      datalabels: {
+        display: false,
+      },
     },
   }
   return (

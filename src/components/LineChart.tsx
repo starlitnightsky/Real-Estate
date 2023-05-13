@@ -67,21 +67,6 @@ const LineChart = () => {
         },
       },
     },
-    tooltips: {
-      enabled: false,
-      // mode: 'label',
-      // callbacks: {
-      //   label: function (
-      //     tooltipItem: { datasetIndex: string | number; yLabel: any },
-      //     data: { datasets: { [x: string]: { label: string } } }
-      //   ) {
-      //     const label = data.datasets[tooltipItem.datasetIndex].label || ''
-      //     const value = tooltipItem.yLabel
-      //     const image = '<img src="russia.png" alt="123"/>'
-      //     return ''
-      //   },
-      // },
-    },
     plugins: {
       legend: {
         display: false,
@@ -90,6 +75,9 @@ const LineChart = () => {
           boxWidth: 15,
           padding: 20,
         },
+      },
+      datalabels: {
+        display: false,
       },
     },
   }
