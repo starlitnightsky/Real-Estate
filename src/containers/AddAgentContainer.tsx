@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CustomInput, ImageUpload } from '../components'
+import { CustomInput, ImageUpload, CustomSelect } from '../components'
 
 export function AddAgentContainer() {
   return (
@@ -40,23 +40,9 @@ export function AddAgentContainer() {
         <CustomInput placeholder='Desgination' />
         <div className='flex'>
           <CustomInput placeholder='Experience' />
-          <select
-            id='underline_select'
-            className='block py-2.5 px-0 w-[130px] text-lg bg-transparent border-0 border-b-2 appearance-none text-gray-300 border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-200 peer'
-          >
-            <option
-              value='years'
-              className='bg-zinc-800 text-gray-300 border-none'
-            >
-              Years
-            </option>
-            <option
-              value='months'
-              className='bg-zinc-800 text-gray-300 border-none'
-            >
-              Months
-            </option>
-          </select>
+          <div className='w-[130px]'>
+            <CustomSelect optionText={['Years', 'Months']} />
+          </div>
         </div>
         <CustomInput
           placeholder='RERA License No'
