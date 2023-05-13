@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { CustomInput, ImageUpload } from '../components'
+import { MultiSelect } from '../components/MultiSelect'
 
 export function AddAgentContainer() {
   return (
@@ -44,8 +45,7 @@ export function AddAgentContainer() {
           </select>
         </div>
         <CustomInput placeholder='RERA License No' type='number' />
-        <CustomInput placeholder='Language Skills' />
-
+        <MultiSelect />
         <CustomInput placeholder='Whatsapp Contact Number' type='number' />
         <CustomInput placeholder='About you' />
       </div>
