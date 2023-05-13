@@ -6,10 +6,7 @@ export function AddAgentContainer() {
   return (
     <div className='grid grid-cols-3 p-3 gap-10 pt-16 justify-items-center'>
       <div className='h-[280px] w-[280px]'>
-        <ImageUpload
-          multiple={false}
-          text='Agent Image'
-        />
+        <ImageUpload multiple={false} text='Agent Image' />
       </div>
       <div className='flex flex-col gap-10 w-full'>
         <div className='mt-7'></div>
@@ -18,22 +15,10 @@ export function AddAgentContainer() {
           <CustomInput placeholder='Last name' />
         </div>
         <CustomInput placeholder='Address' />
-        <CustomInput
-          type='number'
-          placeholder='Contact No.'
-        />
-        <CustomInput
-          type='email'
-          placeholder='Email'
-        />
-        <CustomInput
-          type='password'
-          placeholder='Password'
-        />
-        <CustomInput
-          type='password'
-          placeholder='Confirm Password'
-        />
+        <CustomInput type='number' placeholder='Contact No.' />
+        <CustomInput type='email' placeholder='Email' />
+        <CustomInput type='password' placeholder='Password' />
+        <CustomInput type='password' placeholder='Confirm Password' />
       </div>
       <div className='flex flex-col gap-10 w-full'>
         <p className='text-xl text-white text-start'>Personal Information</p>
@@ -42,7 +27,7 @@ export function AddAgentContainer() {
           <CustomInput placeholder='Experience' />
           <select
             id='underline_select'
-            className='block py-2.5 px-0 w-[130px] text-lg bg-transparent border-0 border-b-2 appearance-none text-gray-300 border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-200 peer'
+            className='block pb-[2px] py-2.5 px-0 w-[130px] text-lg bg-transparent border-0 border-b-2 appearance-none text-gray-300 border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-200 peer'
           >
             <option
               value='years'
@@ -58,16 +43,10 @@ export function AddAgentContainer() {
             </option>
           </select>
         </div>
-        <CustomInput
-          placeholder='RERA License No'
-          type='number'
-        />
+        <CustomInput placeholder='RERA License No' type='number' />
         <CustomInput placeholder='Language Skills' />
 
-        <CustomInput
-          placeholder='Whatsapp Contact Number'
-          type='number'
-        />
+        <CustomInput placeholder='Whatsapp Contact Number' type='number' />
         <CustomInput placeholder='About you' />
       </div>
       <div></div>
