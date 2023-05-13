@@ -5,20 +5,21 @@ type InputType = {
   width?: string
   height?: string
   placeholder?: string
+  row: number
 }
 
 export function CustomTextarea({
   required,
   width,
-  height,
   placeholder,
+  row,
 }: InputType) {
   return (
     <div className={`relative z-0 ${width ? width : 'w-full'} group flex`}>
       <textarea
         name='custom_input'
         id='custom_input'
-        rows={7}
+        rows={row}
         className={`block py-2.5 px-0 ${
           width ? width : 'w-full'
         } text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-yellow-200 peer scroll1`}

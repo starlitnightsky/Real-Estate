@@ -12,6 +12,7 @@ import { AbilityItem } from './AbilityItem'
 import { LocalityItem } from './LocalityItem'
 import { PropertyCard } from './PropertyCard'
 import { CustomSelect } from './CustomSelect'
+import { CustomTextarea } from './CustomTextarea'
 
 export {
   AgentsRegistered,
@@ -28,4 +29,5 @@ export {
   LocalityItem,
   PropertyCard,
   CustomSelect,
+  CustomTextarea,
 }

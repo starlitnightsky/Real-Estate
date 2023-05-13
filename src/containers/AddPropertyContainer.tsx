@@ -1,11 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import { CustomInput, ImageUpload, LocalityItem } from '../components'
+import {
+  CustomInput,
+  ImageUpload,
+  LocalityItem,
+  CustomSelect,
+  CustomTextarea,
+} from '../components'
 
 export function AddPropertyContainer() {
   const [localityCount, setLocalityCount] = useState(0)
   const [localityState, setLocalityState] = useState([localityCount])
 
+  const [hiddenProperty, setHiddenProperty] = useState(true)
+  const [hiddenDateAvailability, setHiddenAvailability] = useState(true)
+  const [hiddenLifestyle, setHiddenLifestyle] = useState(true)
+  const [checkedFeature, setCheckedFeature] = useState(true)
+  const [hiddenFeature, setHiddenFeature] = useState(true)
+  const [referenceNumber, setReferenceNumber] = useState('634587349')
+
+  useEffect(() => {
+    setReferenceNumber('482957396')
+    setHiddenFeature(true)
+    setCheckedFeature(true)
+  }, [])
   const addLocality = () => {
     const tmp = [...localityState]
     setLocalityCount((abilityCount) => abilityCount + 1)
@@ -22,87 +40,154 @@ export function AddPropertyContainer() {
 
   return (
     <div className='flex flex-col gap-10 w-full'>
-      <div className='grid grid-cols-4 gap-10'>
-        <div className='flex flex-col gap-5'>
-          <p className='text-xl text-white text-start'>Location</p>
-          <CustomInput placeholder='Address' />
-          <CustomInput placeholder='Locality' />
-          <CustomInput placeholder='Street' />
-          <CustomInput placeholder='State' />
-          <CustomInput placeholder='City' />
-          <CustomInput
-            placeholder='Zip Code'
-            type='number'
-          />
-        </div>
-        <div className='flex flex-col gap-5'>
-          <p className='text-xl text-white text-start'>Feature property</p>
-          <CustomInput placeholder='Feature property' />
-          <CustomInput placeholder='Property for' />
-          <CustomInput placeholder='Property type' />
-          <CustomInput
-            placeholder='Price'
-            type='number'
-          />
-          <CustomInput placeholder='Security deposit' />
-          <CustomInput
-            placeholder='Beds'
-            type='number'
-          />
-        </div>
-        <div className='flex flex-col gap-5'>
-          <div className='mt-7'></div>
-          <CustomInput
-            placeholder='Baths'
-            type='number'
-          />
-          <CustomInput
-            placeholder='Kitchen size'
-            type='number'
-          />
-          <CustomInput placeholder='Buildup area' />
-          <CustomInput placeholder='Lease duration' />
-          <CustomInput placeholder='Servent quaters' />
-        </div>
-        <div className='flex flex-col gap-5'>
-          <div className='mt-7'></div>
-          <CustomInput placeholder='Calling' />
-          <CustomInput placeholder='Appliances' />
-          <CustomInput
-            placeholder='Floor size'
-            type='number'
-          />
-          <CustomInput placeholder='Flooring type' />
-          <CustomInput
-            placeholder='Date available'
-            type='date'
-          />
-          <CustomInput
-            placeholder='Zip Code'
-            type='number'
-          />
-        </div>
-      </div>
       <div className='grid grid-cols-3 gap-10'>
-        <div className='flex flex-col'>
-          <p className='text-xl text-white text-start'>Property description</p>
-          <CustomInput placeholder='Property desc' />
+        <div className='flex flex-col gap-4'>
+          <div className='w-full'>
+            <p className=' text-xs text-gray-400 text-start p-0'>
+              Property Type
+            </p>
+            <CustomSelect
+              optionText={[
+                'Villas',
+                'Penthouse',
+                'Apartments',
+                'Townhouse',
+                'Plot',
+                'Loft & Duplex',
+                'Office',
+              ]}
+              showProperty={() => setHiddenProperty(false)}
+              hideProperty={() => setHiddenProperty(true)}
+            />
+          </div>
+          {!hiddenProperty && (
+            <div className='flex flex-col gap-5'>
+              <CustomInput
+                placeholder='Number of Floors'
+                type='number'
+              />
+              <CustomInput
+                placeholder='Year Built-In'
+                type='date'
+              />
+            </div>
+          )}
+          <div className='w-full'>
+            <p className=' text-xs text-gray-400 text-start p-0'>
+              Property Availablitity
+            </p>
+            <CustomSelect
+              optionText={['Ready', 'Offplan']}
+              showDateAvailability={() => setHiddenAvailability(false)}
+              hideDateAvailability={() => setHiddenAvailability(true)}
+            />
+          </div>
+          {!hiddenDateAvailability && (
+            <CustomInput
+              placeholder='Date of availability'
+              type='date'
+            />
+          )}
+          <div>
+            <p className=' text-xs text-gray-400 text-start p-0'>Lifestyle</p>
+            <CustomSelect
+              optionText={[
+                'Beachfront',
+                'Downtown Living',
+                'Golf Estates',
+                'Luxury penthouses',
+                'Sea Facing Properties',
+                'Waterfront Properties',
+                'Resedential Communities',
+                'Others',
+              ]}
+              showLifestyle={() => setHiddenLifestyle(false)}
+              hideLifestyle={() => setHiddenLifestyle(true)}
+            />
+          </div>
+          {!hiddenLifestyle && (
+            <CustomInput placeholder='Input your own lifestyle' />
+          )}
+
+          <div className='flex'>
+            <CustomInput
+              placeholder='Price'
+              type='number'
+            />
+            <div className='w-[130px]'>
+              <CustomSelect
+                optionText={['AED', 'USD', 'EUR', 'JPY', 'GBP', 'CAD']}
+              />
+            </div>
+          </div>
         </div>
-        <div className='flex flex-col'>
-          <p className='text-xl text-white text-start'>Property highlights</p>
-          <CustomInput placeholder='Accomodation' />
+        <div className='flex flex-col gap-4 mt-[10px]'>
           <CustomInput
-            placeholder='Plot size'
+            placeholder='Bedrooms'
             type='number'
           />
-          <CustomInput placeholder='Your built' />
+          <CustomInput
+            placeholder='Bathrooms'
+            type='number'
+          />
+          <CustomInput placeholder='SQ.FT' />
+          <CustomInput placeholder='Plot Size' />
+          <div className='flex flex-col'>
+            <CustomTextarea
+              row={6}
+              placeholder='Description of Property'
+            />
+          </div>
+          <CustomInput placeholder='Developer' />
+          <CustomInput placeholder='Building Name' />
         </div>
-        <div className='flex flex-col'>
-          <div className='mt-7'></div>
-          <CustomInput placeholder='Parking' />
-          <CustomInput placeholder='Services' />
+        <div className='flex flex-col gap-5 mt-[10px]'>
+          <div className='flex flex-col gap-4'>
+            <CustomInput
+              placeholder='RERA Number'
+              type='number'
+            />
+            <CustomInput placeholder='Location' />
+            <CustomInput placeholder='Area' />
+          </div>
+          <div className='flex flex-col mt-5'>
+            <div className='flex items-center'>
+              <input
+                id='default-checkbox'
+                type='checkbox'
+                checked={checkedFeature}
+                className='w-4 h-4 text-blue-500 bg-white border-0 rounded focus:ring-blue-500 focus:ring-2 hover:cursor-pointer'
+                onChange={() => setCheckedFeature(!checkedFeature)}
+              />
+              <label
+                htmlFor='default-checkbox'
+                className='ml-2 text-lg text-white hover:cursor-pointer'
+              >
+                Featured Listing
+              </label>
+            </div>
+            {checkedFeature && (
+              <div className='flex flex-col gap-2'>
+                <CustomInput placeholder='Features' />
+                {!hiddenFeature && (
+                  <CustomInput placeholder='Input your own feature' />
+                )}
+              </div>
+            )}
+          </div>
+          <div className='flex flex-col-reverse h-full'>
+            <div className='flex flex-col gap-4'>
+              <CustomInput
+                placeholder='Reference Number'
+                type='number'
+                value={referenceNumber}
+              />
+              <CustomInput placeholder='Youtube Link' />
+            </div>
+          </div>
         </div>
       </div>
+
       <div className='flex flex-col gap-3'>
         <p className='text-xl font-semibold text-white text-start'>
           Upload Development Image

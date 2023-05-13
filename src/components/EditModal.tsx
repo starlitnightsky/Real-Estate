@@ -44,12 +44,15 @@ export function EditModal({ hidden, close }: ModalType) {
           <div className='grid grid-cols-2 gap-10 px-[50px] py-[50px]'>
             <div className='flex flex-col gap-5'>
               <p className='text-xl text-white text-start'>Change status</p>
-              <CustomSelect />
+              <CustomSelect optionText={['ACTIVE', 'ON HOLD', 'CLOSE']} />
             </div>
             <div></div>
             <div className=' col-span-2'>
               {/* <CustomInput placeholder='message' /> */}
-              <CustomTextarea placeholder='message' />
+              <CustomTextarea
+                row={9}
+                placeholder='message'
+              />
             </div>
           </div>
           {/* <!-- Modal footer --> */}
