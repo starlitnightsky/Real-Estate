@@ -4,17 +4,19 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import './App.css'
 
-import { SideBarContainer } from './containers/SideBarContainer'
-import { TopBarContainer } from './containers/TopBarContainer'
-import { DashboardContainer } from './containers/DashboardContainer'
-import { PaymentContainer } from './containers/PaymentContainer'
-import { DevelopmentContainer } from './containers/DevelopmentContainer'
-import { AddAgentContainer } from './containers/AddAgentContainer'
-import { AddPropertyContainer } from './containers/AddPropertyContainer'
-import { LeadsContainer } from './containers/LeadsContainer'
-import { AgentListContainer } from './containers/AgentListContainer'
-import { ListDevelopmentContainer } from './containers/ListDevelopmentContainer'
-import { PropertyContainer } from './containers/PropertyContainer'
+import { 
+  SideBarContainer,
+  TopBarContainer,
+  DashboardContainer,
+  PaymentContainer,
+  DevelopmentContainer,
+  AddAgentContainer,
+  AddPropertyContainer,
+  LeadsContainer,
+  AgentListContainer,
+  ListDevelopmentContainer,
+  PropertyContainer
+} from './containers'
 
 export const NavigationContext = createContext('dashboard')
 function App() {
